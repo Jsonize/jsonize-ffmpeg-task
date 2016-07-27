@@ -1,6 +1,7 @@
 global.jsonize = function (json) {
-	return JSON.parse(require("child_process").execSync(
+	var result = require("child_process").execSync(
         "jsonize --instance --register " + __dirname + "/../../index.js",
         { input: JSON.stringify(json) }
-    ).toString());
+    ).toString().trim().split("\n").pop();
+	return JSON.parse(result);
 };
