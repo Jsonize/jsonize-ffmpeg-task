@@ -1,0 +1,18 @@
+{
+	"name": "jsonize-ffmpeg-task",
+	"description": "Jsonize Ffmpeg Task",
+	"version": "0.0.1",
+	"author": "Ziggeo",
+	"repository": "https://github.com/jsonize/jsonize-ffmpeg-task",
+	"license": "Apache-2.0",
+    "engines": {
+	    "node": "",
+	    "js-ffmpeg": ""
+ 	},
+	"devDependencies": {
+		"grunt": "",
+        "grunt-node-qunit": "",
+        "qunit": "",
+        "grunt-contrib-jshint": ""
+	}
+}
