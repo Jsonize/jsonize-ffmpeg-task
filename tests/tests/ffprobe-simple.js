@@ -74,7 +74,8 @@ test("ffprobe-simple rotated mov", function() {
 						codec_name : 'avc1',
 						codec_long_name : 'H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10',
 						codec_profile : 'Baseline',
-						bit_rate : 507677
+						bit_rate : 507677,
+						frames: 66
 					}
 				}
 			} ]

@@ -28,8 +28,8 @@ test(
 									"result" : {
 										"filename" : OUTPUT_VIDEO,
 										"stream_count" : 2,
-										"size" : 170743,
-										"bit_rate" : 599098,
+										"size" : 171353,
+										"bit_rate" : 601238,
 										"start_time" : -0.02322,
 										"duration" : 2.28,
 										"format_name" : "QuickTime / MOV",
@@ -46,7 +46,8 @@ test(
 											"codec_name" : "avc1",
 											"codec_long_name" : "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
 											"codec_profile" : "Constrained Baseline",
-											"bit_rate" : 528635
+											"bit_rate" : 528635,
+											"frames": 57
 										},
 										"audio" : {
 											"index" : 1,
@@ -55,7 +56,7 @@ test(
 											"codec_profile" : "LC",
 											"audio_channels" : 1,
 											"sample_rate" : 44100,
-											"bit_rate" : 61447
+											"bit_rate" : 63613
 										}
 									}
 								} ]
