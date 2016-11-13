@@ -1,5 +1,7 @@
 var OUTPUT_VIDEO = "temp/video.mp4";
+var OUTPUT2_VIDEO = "temp/video2.mp4";
 var ROTATED_MOV_VIDEO = "tests/assets/iphone_rotated.mov";
+var BROKEN_WAV = "tests/assets/broken-wav.wav";
 
 test(
 		"ffmpeg-simple rotated mov",
@@ -61,4 +63,22 @@ test(
 									}
 								} ]
 							});
+		});
+
+
+test(
+		"ffmpeg-simple broken wav",
+		function() {
+			$result = jsonize({
+				"type" : "invoke",
+				"transaction" : 124,
+				"payload" : {
+					"task" : "ffmpeg-simple",
+					"payload" : {
+						"source" : [ROTATED_MOV_VIDEO, BROKEN_WAV],
+						"output" : OUTPUT2_VIDEO
+					}
+				}
+			});
+			QUnit.equal($result.type, "error");
 		});
