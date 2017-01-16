@@ -1,13 +1,16 @@
 {
 	"name": "jsonize-ffmpeg-task",
 	"description": "Jsonize Ffmpeg Task",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"author": "Ziggeo",
 	"repository": "https://github.com/jsonize/jsonize-ffmpeg-task",
 	"license": "Apache-2.0",
     "engines": {
-	    "node": "",
-	    "js-ffmpeg": ""
+	    "node": ""
+ 	},
+ 	"main": "index.js",
+ 	"dependencies": {
+    	"js-ffmpeg": "~0.0.14" 		
  	},
 	"devDependencies": {
 		"grunt": "",
