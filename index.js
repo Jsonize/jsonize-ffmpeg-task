@@ -9,7 +9,11 @@ Scoped.define("jsonize:JsonizeFfprobeTask", [
 	var Cls = Class.extend({scoped: scoped}, {
 		
 		_run: function (payload) {
-			return jsffmpeg.ffprobe(payload.source);
+			return jsffmpeg.ffprobe(payload.source, {
+				docker: payload.docker,
+				test_ffmpeg: payload.test_ffmpeg,
+				test_info: payload.test_info
+			});
 		}
 			
 	});
@@ -28,7 +32,11 @@ Scoped.define("jsonize:JsonizeFfprobeSimpleTask", [
  	var Cls = Class.extend({scoped: scoped}, {
  		
  		_run: function (payload) {
- 			return jsffmpeg.ffprobe_simple(payload.source);
+ 			return jsffmpeg.ffprobe_simple(payload.source, {
+                docker: payload.docker,
+                test_ffmpeg: payload.test_ffmpeg,
+                test_info: payload.test_info
+            });
  		}
  			
  	});
@@ -52,7 +60,12 @@ Scoped.define("jsonize:JsonizeFfmpegTask", [
  				payload.options || [],
  				payload.output,
  				this._event,
- 				this
+ 				this,
+                {
+                    docker: payload.docker,
+                    test_ffmpeg: payload.test_ffmpeg,
+                    test_info: payload.test_info
+                }
  			);
  		}
  			
@@ -78,7 +91,12 @@ Scoped.define("jsonize:JsonizeFfmpegMultiPassTask", [
   				2,
   				payload.output,
   				this._event,
-  				this
+  				this,
+                {
+                    docker: payload.docker,
+                    test_ffmpeg: payload.test_ffmpeg,
+                    test_info: payload.test_info
+                }
   			);
   		}
   			
@@ -103,7 +121,12 @@ Scoped.define("jsonize:JsonizeFfmpegSimpleTask", [
 				payload.options || {},
 				payload.output,
 				this._event,
-				this
+				this,
+                {
+                    docker: payload.docker,
+                    test_ffmpeg: payload.test_ffmpeg,
+                    test_info: payload.test_info
+                }
 			);
 		}
 			
@@ -123,7 +146,11 @@ Scoped.define("jsonize:JsonizeFfmpegVolumeDetectTask", [
 	var Cls = Class.extend({scoped: scoped}, {
 		
 		_run: function (payload) {
-			return jsffmpeg.ffmpeg_volume_detect(payload.source);
+			return jsffmpeg.ffmpeg_volume_detect(payload.source, {
+                docker: payload.docker,
+                test_ffmpeg: payload.test_ffmpeg,
+                test_info: payload.test_info
+            });
 		}
 			
 	});
