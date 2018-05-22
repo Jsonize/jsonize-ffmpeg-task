@@ -138,6 +138,36 @@ Scoped.define("jsonize:JsonizeFfmpegSimpleTask", [
 });
 
 
+Scoped.define("jsonize:JsonizeFfmpegGracefulTask", [
+    "jsonize:AbstractJsonizeTask",
+    "jsonize:JsonizeTaskRegistry",
+    "betajs:Promise"
+], function (Class, TaskRegistry, Promise, scoped) {
+    var Cls = Class.extend({scoped: scoped}, {
+
+        _run: function (payload) {
+            return jsffmpeg.ffmpeg_graceful(
+                payload.source || payload.sources,
+                payload.options || {},
+                payload.output,
+                this._event,
+                this,
+                {
+                    docker: payload.docker,
+                    test_ffmpeg: payload.test_ffmpeg,
+                    test_info: payload.test_info
+                }
+            );
+        }
+
+    });
+
+    TaskRegistry.register("ffmpeg-graceful", Cls);
+
+    return Cls;
+});
+
+
 Scoped.define("jsonize:JsonizeFfmpegVolumeDetectTask", [
 	"jsonize:AbstractJsonizeTask",
 	"jsonize:JsonizeTaskRegistry",
