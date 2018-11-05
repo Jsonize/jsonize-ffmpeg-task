@@ -1,4 +1,4 @@
-# jsonize-ffmpeg-task 0.0.6
+# jsonize-ffmpeg-task
 
 This is a Jsonize Task for js-ffmpeg.
 

@@ -11,6 +11,7 @@ Scoped.define("jsonize:JsonizeFfprobeTask", [
 		_run: function (payload) {
 			return jsffmpeg.ffprobe(payload.source, {
 				docker: payload.docker,
+                timeout: payload.timeout,
 				test_ffmpeg: payload.test_ffmpeg,
 				test_info: payload.test_info
 			});
@@ -34,6 +35,7 @@ Scoped.define("jsonize:JsonizeFfprobeSimpleTask", [
  		_run: function (payload) {
  			return jsffmpeg.ffprobe_simple(payload.source, {
                 docker: payload.docker,
+                timeout: payload.timeout,
                 test_ffmpeg: payload.test_ffmpeg,
                 test_info: payload.test_info
             });
@@ -63,6 +65,7 @@ Scoped.define("jsonize:JsonizeFfmpegTask", [
  				this,
                 {
                     docker: payload.docker,
+                    timeout: payload.timeout,
                     test_ffmpeg: payload.test_ffmpeg,
                     test_info: payload.test_info
                 }
@@ -94,6 +97,7 @@ Scoped.define("jsonize:JsonizeFfmpegMultiPassTask", [
   				this,
                 {
                     docker: payload.docker,
+                    timeout: payload.timeout,
                     test_ffmpeg: payload.test_ffmpeg,
                     test_info: payload.test_info
                 }
@@ -124,6 +128,7 @@ Scoped.define("jsonize:JsonizeFfmpegSimpleTask", [
 				this,
                 {
                     docker: payload.docker,
+                    timeout: payload.timeout,
                     test_ffmpeg: payload.test_ffmpeg,
                     test_info: payload.test_info
                 }
@@ -154,6 +159,7 @@ Scoped.define("jsonize:JsonizeFfmpegGracefulTask", [
                 this,
                 {
                     docker: payload.docker,
+                    timeout: payload.timeout,
                     test_ffmpeg: payload.test_ffmpeg,
                     test_info: payload.test_info
                 }
@@ -178,6 +184,7 @@ Scoped.define("jsonize:JsonizeFfmpegVolumeDetectTask", [
 		_run: function (payload) {
 			return jsffmpeg.ffmpeg_volume_detect(payload.source, {
                 docker: payload.docker,
+				timeout: payload.timeout,
                 test_ffmpeg: payload.test_ffmpeg,
                 test_info: payload.test_info
             });

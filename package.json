@@ -1,7 +1,7 @@
 {
 	"name": "jsonize-ffmpeg-task",
 	"description": "Jsonize Ffmpeg Task",
-	"version": "0.0.6",
+	"version": "0.0.7",
 	"author": "Ziggeo",
 	"repository": "https://github.com/jsonize/jsonize-ffmpeg-task",
 	"license": "Apache-2.0",
